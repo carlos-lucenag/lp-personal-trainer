@@ -126,7 +126,7 @@ header img {
     width: auto;
 }
 
-header button {
+header .header-cta {
     border: 2px solid var(--text-light);
     border-radius: 30px;
     background-color: transparent;
@@ -134,11 +134,14 @@ header button {
     padding: 0.5rem 1.5rem;
     font-weight: 600;
     font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
 }
 
-header button:hover {
+header .header-cta:hover {
     background-color: var(--text-light);
     color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 header p {
@@ -196,7 +199,8 @@ header p {
     margin-bottom: 1rem;
 }
 
-.content button {
+.cta-button {
+    display: inline-block;
     place-self: center;
     font-size: 1.2rem;
     width: 100%;
@@ -211,6 +215,28 @@ header p {
     color: var(--primary-color);
     font-weight: 600;
     text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(168, 240, 240, 0.5);
+}
+
+.cta-button.secondary {
+    background-image: none;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    animation: none;
+}
+
+.cta-button.secondary:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 @keyframes gradientAnimation {
@@ -351,21 +377,9 @@ header p {
     filter: drop-shadow(0 0 10px rgba(168, 240, 240, 0.1));
 }
 
-#metodo button {
-    place-self: center;
+#metodo .cta-button {
     margin-top: 4rem;
     padding: 1rem 2.5rem;
-    border-radius: 50px;
-    border: 2px solid var(--accent-color);
-    background: transparent;
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 1rem;
-}
-
-#metodo button:hover {
-    background: var(--accent-color);
-    color: var(--primary-color);
 }
 
 /* TESTIMONIALS SECTION */
@@ -476,20 +490,15 @@ header p {
     margin-bottom: 2rem;
 }
 
-#final button {
-    place-self: center;
+#final .cta-button {
     margin-top: 2.5rem;
     font-size: 1.2rem;
     font-weight: 800;
     padding: 1.2rem 3rem;
-    border: none;
-    border-radius: 50px;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
     box-shadow: 0 0 30px rgba(168, 240, 240, 0.5);
 }
 
-#final button:hover {
+#final .cta-button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 50px rgba(168, 240, 240, 0.7);
 }
@@ -500,7 +509,7 @@ header p {
         padding: 0 1.5rem;
     }
 
-    header button {
+    header .header-cta {
         padding: 0.4rem 1rem;
         font-size: 0.8rem;
     }
@@ -536,6 +545,7 @@ header p {
     #home {
         align-items: center;
         overflow: hidden;
+        background: linear-gradient(to right, hsl(180, 90%, 10%), hsl(180, 40%, 25%), transparent);
     }
 
     #background-image {
@@ -562,7 +572,7 @@ header p {
         color: var(--text-light);
     }
 
-    .content button {
+    .cta-button {
         align-self: flex-start;
         width: auto;
         padding: 1.2rem 3rem;
